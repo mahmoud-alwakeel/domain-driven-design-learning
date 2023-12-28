@@ -4,16 +4,16 @@ import 'package:domain_driven_design_learning_app/domain/core/failures.dart';
 import 'package:domain_driven_design_learning_app/domain/core/value_objects.dart';
 import 'package:domain_driven_design_learning_app/domain/core/value_validators.dart';
 
-class EmailAdress extends ValueObject<String>{
+class EmailAddress extends ValueObject<String>{
   final Either<ValueFailure<String>, String> value;
   
-  factory EmailAdress(String input) {
-    return EmailAdress._(
+  factory EmailAddress(String input) {
+    return EmailAddress._(
       validateEmailAdress(input)
     );
   }
 
-  const EmailAdress._(this.value);
+  const EmailAddress._(this.value);
 }
 
 class Password extends ValueObject<String>{
@@ -32,7 +32,7 @@ class Password extends ValueObject<String>{
 
 
 // void ShowEmailAdressOrFailure() {
-//   final emailAdress = EmailAdress('aaa');
+//   final emailAdress = EmailAddress('aaa');
 
 //   String emailText = emailAdress.value.fold(
 //     (l) => 'some error happened : $l',
